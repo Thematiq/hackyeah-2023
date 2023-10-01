@@ -1,0 +1,9 @@
+{
+  "name": "hackyeah-2023",
+  "version": "0.1.0",
+  "workspaces": [
+    "app",
+    "motion"
+  ],
+  "private": true
+}

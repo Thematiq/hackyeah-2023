@@ -1,3 +1,5 @@
 .idea/
 volumes/
 /notebooks/vit-base-patch16-224-finetuned-eurosat/
+media/
+.DS_Store
