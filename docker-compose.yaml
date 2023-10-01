@@ -18,6 +18,9 @@ services:
     build: fastapi
     ports:
       - "8000:80"
+    depends_on:
+      - "standalone"
+      - "postgis"
 
   etcd:
     container_name: milvus-etcd
@@ -75,6 +78,16 @@ services:
     depends_on:
       - "etcd"
       - "minio"
+
+  atto:
+    container_name: atto
+    image: zilliz/attu:v2.3.1
+    depends_on:
+      - "standalone"
+    environment:
+      MILVUS_URL: milvus-standalone:19530
+    ports:
+      - "8800:3000"
 
 networks:
   default:
